@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-
+import CrocheImage from '../assets/images/croche.jpg'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -12,6 +12,10 @@ export default function Home() {
     { name: 'Produto 04', price: 'R$ 300,00', },
     { name: 'Produto 05', price: 'R$ 100,00', },
     { name: 'Produto 06', price: 'R$ 500,00', },
+    { name: 'Produto 07', price: 'R$ 500,00', },
+    { name: 'Produto 08', price: 'R$ 500,00', },
+    { name: 'Produto 09', price: 'R$ 500,00', },
+    { name: 'Produto 10', price: 'R$ 500,00', },
   ]
   return (
     <>
@@ -34,38 +38,41 @@ export default function Home() {
             </li>
             <li className="flex">
               <a className="text-orange-50 px-4 py-2 uppercase border-b-2 border-transparent hover:border-orange-800">
-                Produtos B 
+                Produtos B
               </a>
             </li>
             <li className="flex">
               <a className="text-orange-50 px-4 py-2 uppercase border-b-2 border-transparent hover:border-orange-800">
-                Produtos C 
+                Produtos C
               </a>
             </li>
             <li className="flex">
               <a className="text-orange-50 px-4 py-2 uppercase border-b-2 border-transparent hover:border-orange-800">
-                Produtos D 
+                Produtos D
               </a>
             </li>
           </ul>
           <ul>
           </ul>
         </nav>
-        <div className="flex mt-5 container justify-center">
-          <div className="grid grid-rows-4">
-            {products.map((product, index) => (
-              <article key={index} className="col-span-1 bg-white">
-                <header className="">
-                  {/* <img src="" alt="" /> */}
-                </header>
-                <main className="">
-                  product x 
-                </main>
-                <footer className="">
-                </footer>
-              </article>
-            ))}
-          </div>
+        <div className="mt-5 justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-10 container mx-auto">
+          {products.map((product, index) => (
+            <div key={index} className="flex justify-center">
+              {/* <div className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-lg shadow-lg"> */}
+              <div className="w-full overflow-hidden bg-orange-500">
+                <div className="relative pt-5 px-5 flex items-center justify-center">
+                  <Image src={CrocheImage} width={100} height={100} alt="" className="relative w-full h-full" />
+                </div>
+                <div className="relative text-white px-6 pb-6 mt-6">
+                  <span className="block opacity-75 -mb-1">{product.name}</span>
+                  <div className="flex justify-between">
+                    <span className="block font-semibold text-xl">{product.name}</span>
+                    <span className="bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
         <footer>
 
