@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import CrocheImage from '../assets/images/croche.jpg'
+import LogoCroche from '../assets/images/logo-crochet.png'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
       <main className="bg-orange-700 min-h-screen">
         <nav className="flex gap-5 bg-orange-600 py-2 items-center justify-around">
           <div className="flex lg:ml-5 text-white">
-            Crochê
+            <Image src={LogoCroche} alt="" width={120} height={120} />
           </div>
           <ul className="flex flex-row">
             <li className="flex">
