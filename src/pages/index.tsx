@@ -53,10 +53,10 @@ export default function Home() {
         </nav>
         <div className="flex mt-5 container justify-center">
           <div className="grid grid-rows-4">
-            {products.map((product) => (
-              <article className="col-span-1 bg-white">
+            {products.map((product, index) => (
+              <article key={index} className="col-span-1 bg-white">
                 <header className="">
-                  <img src="" alt="" />
+                  {/* <img src="" alt="" /> */}
                 </header>
                 <main className="">
                   product x 
